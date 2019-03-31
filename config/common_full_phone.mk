@@ -11,6 +11,10 @@ PRODUCT_PACKAGES += \
     Stk \
     CellBroadcastReceiver
 
+# Required packages
+PRODUCT_PACKAGES += \
+    LatinIME
+
 # Tethering - allow without requiring a provisioning app
 # (for devices that check this)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \

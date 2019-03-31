@@ -1,4 +1,4 @@
-PRODUCT_BRAND ?= PixelExperience
+PRODUCT_BRAND ?= BestROM
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
@@ -40,10 +40,6 @@ else
 # Enable ADB authentication
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
-
-# Ambient Play
-PRODUCT_PACKAGES += \
-    AmbientPlayHistoryProvider
 
 # Backup Tool
 PRODUCT_COPY_FILES += \
@@ -105,7 +101,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 
 # Optional packages
 PRODUCT_PACKAGES += \
-    LiveWallpapersPicker
+    LiveWallpapersPicker \
+    Launcher3
 
 # Charger
 PRODUCT_PACKAGES += \
@@ -131,30 +128,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/aosp/overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/aosp/overlay/common
 
-# Key disabler package
-PRODUCT_PACKAGES += \
-    org.pixelexperience.keydisabler
-
-PRODUCT_BOOT_JARS += \
-    org.pixelexperience.keydisabler
-
-# Cutout control overlay
-PRODUCT_PACKAGES += \
-    NoCutoutOverlay
-
 # Branding
 include vendor/aosp/config/branding.mk
-
-# OTA
-include vendor/aosp/config/ota.mk
-
-# GApps
-include vendor/gapps/config.mk
-
-# Pixel Style
-include vendor/pixelstyle/config.mk
-
-# Themes
-include vendor/themes/config.mk
 
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
